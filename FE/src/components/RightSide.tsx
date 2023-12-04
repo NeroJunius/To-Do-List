@@ -20,7 +20,7 @@ export default function RightSide() {
             </Box>
             <Box mx={20} mt={10}>
                 <Image
-                    src="https://images7.alphacoders.com/104/1042209.jpg"
+                    src="https://cdn.discordapp.com/attachments/1101348162293207112/1181292116572373106/image.png?ex=65808703&is=656e1203&hm=aea94722423df9d011dfca88c1e218ab7ff977ad6b86c8f991ab0986bf4dbfc8&"
                     width="41.1875rem"
                     height="26.5625rem"
                     flexShrink={0}

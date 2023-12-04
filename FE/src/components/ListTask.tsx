@@ -13,12 +13,6 @@ import { useCategory } from "../hooks/useCategory";
 import { useEffect, ChangeEvent } from "react";
 import { useToDo } from "../hooks/useToDo";
 import { DeleteIcon } from "@chakra-ui/icons";
-// import Work from "/images/work-category.svg"
-// import Study from "/images/study-category.svg"
-// import Groceries from "/images/groceries-category.svg"
-// import Sports from "/images/sport-category.svg"
-// import Rectangle from "/images/rectangle-2.svg"
-// import Checked from "../assets/checked.svg"
 
 export default function ListTask(_props: ITaskList) {
     const { categories, getCategories } = useCategory();
@@ -49,12 +43,10 @@ export default function ListTask(_props: ITaskList) {
         <Container p={5} w={"100%"} display="flex" flexDirection="column">
             <form onSubmit={handleToDo}>
                 <Box
-                    border={"1px"}
-                    borderColor={"gray.200"}
                     display={"flex"}
                     flexDir={"row"}
                     gap={4}
-                    w={"auto"}
+                    w={"40.75rem"}
                 >
                     <Input
                         placeholder="Add a new task"
@@ -82,13 +74,13 @@ export default function ListTask(_props: ITaskList) {
                             </option>
                         ))}
                     </Select>
-                    <Button size={"lg"} type='submit'>Submit</Button>
+                    <Button size={"lg"} type='submit' w={"10rem"}>Submit</Button>
                 </Box>
             </form>
 
             <Flex flexDir={"column"} mt={10} gap={4}>
                 {task.map((task, index) => (
-                    <Box display={"flex"} border={"1px"} borderColor={"gray.200"} key={task._id}>
+                    <Box display={"flex"} key={task._id}>
                         <Checkbox
                             size={"lg"}
                             isChecked={checkboxStates[index]}
@@ -96,14 +88,13 @@ export default function ListTask(_props: ITaskList) {
                         />
                             <Box display={"flex"} gap={4} m={3}>
                                 <Box>
-                                    <Text as={"b"} size={"md"}>{task.description}</Text>
+                                    <Text fontSize={"1.50rem"}>{task.description}</Text>
                                 </Box>
                                 <Button bgColor={task.category?.color}>
                                     <Text color={'white'}>{task.category?.name}</Text>
                                 </Button>
-                                <Button leftIcon={<DeleteIcon/>}>Delete</Button>
+                                <Button colorScheme="red" leftIcon={<DeleteIcon/>}>Delete</Button>
                             </Box>
-                        
                     </Box>
                 ))}
             </Flex>

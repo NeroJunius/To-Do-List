@@ -37,7 +37,7 @@ export default function CategoryModal({ isOpen, onClose }: CategoryModalProps) {
 
     const handleSaveCategory = async () => {
         try {
-          await handleCategory(e); 
+          await handleCategory(); 
         } catch (error) {
           console.error("Error in handleSaveCategory:", error);
         } finally {
